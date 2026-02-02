@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "hindi": "मैं स्कूल जाता हूँ।",
+    "correct": "I go to school.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 2,
+    "hindi": "वह खाना खा रही है।",
+    "correct": "She is eating food.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 3,
+    "hindi": "वह खेल खेल रहा है।",
+    "correct": "He is playing a game.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 4,
+    "hindi": "मैं पानी पीता हूँ।",
+    "correct": "I drink water.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 5,
+    "hindi": "हम बाज़ार जा रहे हैं।",
+    "correct": "We are going to the market.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 6,
+    "hindi": "तुम अच्छे लड़के हो।",
+    "correct": "You are a good boy.",
+    "grammar": "Simple Present Tense (Be form)"
+  },
+  {
+    "id": 7,
+    "hindi": "वह किताब पढ़ रही है।",
+    "correct": "She is reading a book.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 8,
+    "hindi": "मैं टीवी देखता हूँ।",
+    "correct": "I watch TV.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 9,
+    "hindi": "हमें मिठाई पसंद है।",
+    "correct": "We like sweets.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 10,
+    "hindi": "सूरज चमक रहा है।",
+    "correct": "The sun is shining.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 11,
+    "hindi": "मैं सोने जा रहा हूँ।",
+    "correct": "I am going to sleep.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 12,
+    "hindi": "वह स्कूल में पढ़ती है।",
+    "correct": "She studies in school.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 13,
+    "hindi": "मेरा नाम राहुल है।",
+    "correct": "My name is Rahul.",
+    "grammar": "Simple Present Tense (Be form)"
+  },
+  {
+    "id": 14,
+    "hindi": "वह मेरा दोस्त है।",
+    "correct": "He is my friend.",
+    "grammar": "Simple Present Tense (Be form)"
+  },
+  {
+    "id": 15,
+    "hindi": "मैं संगीत सुनता हूँ।",
+    "correct": "I listen to music.",
+    "grammar": "Simple Present Tense"
+  },
+  {
+    "id": 16,
+    "hindi": "यह मेरा घर है।",
+    "correct": "This is my house.",
+    "grammar": "Simple Present Tense (Be form)"
+  },
+  {
+    "id": 17,
+    "hindi": "गाड़ी तेज़ चल रही है।",
+    "correct": "The car is moving fast.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 18,
+    "hindi": "बारिश हो रही है।",
+    "correct": "It is raining.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 19,
+    "hindi": "बच्चे पार्क में खेल रहे हैं।",
+    "correct": "Children are playing in the park.",
+    "grammar": "Present Continuous Tense"
+  },
+  {
+    "id": 20,
+    "hindi": "मैं दूध पी रहा हूँ।",
+    "correct": "I am drinking milk.",
+    "grammar": "Present Continuous Tense"
+  }
+]
