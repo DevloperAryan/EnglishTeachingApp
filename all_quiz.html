@@ -71,7 +71,7 @@
 
 <body>
 
-  <div class="quiz-box">
+  <div class="quiz-box" id="quizBox">
     <h2 id="question">Loading...</h2>
     <div id="options"></div>
     <div class="explanation" id="explanation"></div>
@@ -80,18 +80,40 @@
 
   <script>
     let questions = [];
-    let currentQuestionIndex = 0;
+    let usedIndexes = [];
+    let currentQuestion = null;
+
     let score = 0;
     let totalAttempted = 0;
 
     const PASS_PERCENTAGE = 70;
 
     const urlParams = new URLSearchParams(window.location.search);
-    const topic = urlParams.get("topic");
+    const topicRaw = urlParams.get("topic");
 
-    if (!topic) {
+    if (!topicRaw) {
       alert("No quiz topic selected!");
+      // Prevent errors below and send user back.
+      window.location.href = "learning.html";
+      throw new Error("Missing topic parameter");
     }
+
+    const topic = topicRaw.trim();
+
+    // Must match the order used on learning page (learning.js)
+    const TOPIC_ORDER = [
+      "noun",
+      "pronoun",
+      "verb",
+      "adjective",
+      "adverb",
+      "preposition",
+      "article",
+      "conjuction",
+      "interjection",
+      "sentence_formation",
+      "tense",
+    ];
 
     const quizFile = `quiz/${topic}.json`;
 
@@ -101,7 +123,8 @@
         questions = data.questions;
         loadQuestion();
       })
-      .catch(() => {
+      .catch((e) => {
+        console.error(e)
         document.getElementById("question").innerText = "❌ Quiz not found!";
       });
 
@@ -110,10 +133,10 @@
       document.getElementById("nextBtn").disabled = true;
 
       if (usedIndexes.length === questions.length) {
-  const scorePercentage = Math.round((score / totalAttempted) * 100);
-  quizFinished(scorePercentage, topic);
-  return;
-}
+        const scorePercentage = totalAttempted ? Math.round((score / totalAttempted) * 100) : 0;
+        quizFinished(scorePercentage, topic);
+        return;
+      }
 
       let index;
       do {
@@ -163,28 +186,36 @@
     document.getElementById("nextBtn").onclick = loadQuestion;
 
     function quizFinished(scorePercentage, topic) {
-  const quizBox = document.getElementById("quizBox");
+      const quizBox = document.getElementById("quizBox");
 
-  quizBox.innerHTML = `
-    <h2>🎉 Quiz Completed!</h2>
+    quizBox.innerHTML = `<h2>🎉 Quiz Completed!</h2>
     <p>Your Score: <strong>${scorePercentage}%</strong></p>
   `;
 
-  if (scorePercentage >= PASS_PERCENTAGE) {
-    localStorage.setItem(`progress_${topic}`, "completed");
+      if (scorePercentage >= PASS_PERCENTAGE) {
+        localStorage.setItem(`progress_${topic}`, "completed");
 
-    quizBox.innerHTML += `
-      <button onclick="goToNextTopic('${topic}')">
+        // Unlock the next topic (and keep the unlock state monotonic).
+        const currentIndex = TOPIC_ORDER.indexOf(topic);
+        if (currentIndex !== -1) {
+          const storedUnlocked = parseInt(localStorage.getItem("unlockedIndex") || "0", 10);
+          const safeStored = Number.isNaN(storedUnlocked) ? 0 : storedUnlocked;
+          const nextUnlocked = Math.max(safeStored, currentIndex + 1);
+          localStorage.setItem("unlockedIndex", String(nextUnlocked));
+        }
+
+        quizBox.innerHTML += `
+      <button onclick="location.href='learning.html'">
         ➡️ Move to Next Topic
       </button>
     `;
-  } else {
-    quizBox.innerHTML += `
+      } else {
+        quizBox.innerHTML += `
       <p style="color:red">You need at least 70% to unlock next topic.</p>
       <button onclick="location.reload()">🔁 Retry Quiz</button>
     `;
-  }
-}
+      }
+    }
   </script>
 
 
