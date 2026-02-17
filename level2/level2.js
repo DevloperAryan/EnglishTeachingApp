@@ -2,7 +2,7 @@ const container = document.getElementById("practiceContainer");
 
 // Check if Level 1 completed
 // const level1Completed = localStorage.getItem("level1_completed");
-const level1Completed = true;
+// const level1Completed = true;
 
 if (!level1Completed) {
   container.innerHTML = `
