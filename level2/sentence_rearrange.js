@@ -2,7 +2,7 @@ let questions = [];
 let currentIndex = 0;
 let userSentence = [];
 
-fetch("../data/rearrange.json")
+fetch('data/rearrange.json')
 .then(res => res.json())
 .then(data => {
     questions = data.questions;
