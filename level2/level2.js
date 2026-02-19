@@ -14,7 +14,7 @@ if (!level1Completed) {
 } else {
   container.innerHTML = `
     <div class="card">
-      <h3>🔀 Rearrange Sentences</h3>
+      <h3>Rearrange Sentences</h3>
       <p>Practice arranging words in correct order.</p>
       <button onclick="location.href='sentence_rearrange.html'">
         Start Practice
@@ -22,9 +22,9 @@ if (!level1Completed) {
     </div>
 
     <div class="card">
-      <h3>🌍 Translate Sentences</h3>
+      <h3>Translate Sentences</h3>
       <p>Translate Hindi sentences into English.</p>
-      <button onclick="location.href='sentence_translate.html'">
+      <button onclick="location.href='sentence_translation.html'">
         Start Practice
       </button>
     </div>
