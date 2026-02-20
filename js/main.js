@@ -1,3 +1,3 @@
 function startLearning() {
-  window.location.href = "learning.html";
+  window.location.href = 'level1/learning.html';
 }
